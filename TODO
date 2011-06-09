@@ -1,0 +1,20 @@
+- Pages
+	- unify about/artist page templates/views
+	
+
+- Home page
+	- CSS transitions on artist block hover?
+	- make tolerant of missing bits of data in YAML
+	- Content
+		- All artists
+		- High quality logos
+
+- Artist page
+	- Media component
+		- Javascript for media thingy (from WK)
+	- CONTENT!
+		- Artists bios, pullout quotes, links, images, video?
+
+- About page
+	- CONTENT
+		- Partner bios

@@ -1,0 +1,313 @@
+  /*
+    Global reset
+    see: http://is.gd/cw66J
+  */
+* {
+vertical-align: baseline;
+font-weight: inherit;
+font-family: inherit;
+font-style: inherit;
+font-size: 100%;
+border: 0 none;
+outline: 0;
+padding: 0;
+margin: 0;
+}
+  
+  /*
+    Layout.
+        1 col = 60px
+        1 gutter = 20px
+        
+        2 col = 140px
+        3 col = 220px
+        5col = 
+        12 col = 940px
+  */
+
+#page {
+width: 960px;
+margin: 0 auto;
+}
+  
+  #content {
+min-width: 640px;
+max-width: 960px;
+}
+  
+  
+  #content {
+clear: left;
+}
+  
+  /*
+    General styles
+  */
+  body {
+font-family: Helvetica, Arial, sans-serif;
+padding: 0;
+margin: 0;
+}
+  
+  body.grid {
+background-color: #fff;
+}
+
+  
+  ul.reset,
+  ul.reset li {
+padding: 0;
+margin: 0;
+list-style: none;
+}
+  
+  #footer,
+  .clear {
+clear: both;
+}
+  
+  #content {
+margin: 20px 0 0 0;
+padding: 0;
+}
+  
+  #content ul {
+margin: 0;
+padding: 0;
+}
+  
+  /*
+    Masthead visual
+  */ 
+  
+  #masthead {
+margin: 0;
+position: relative;
+font-size: 12px;
+width: 980px;
+padding: 0;
+}
+  
+  #masthead #logotype {
+float: left;
+height: 220px;
+width: 200px;
+clear: none;
+background: transparent url('/img/logotype.png') no-repeat;
+}
+
+  
+  #masthead #logotype span {
+visibility: hidden;
+}
+  
+  #masthead #about {
+font-size: 16px;
+margin: 10px 0 30px 360px;
+padding: 40px 0 40px 0;
+width: 550px;
+clear: none;
+line-height: 1.2;
+}
+  
+  #masthead #about h2,
+  #masthead #sponsors h2 {
+font-size: 20px;
+margin-bottom: 5px;
+font-weight: bold;
+}
+  
+  #masthead #about a.more-info {
+float: right;
+margin: 10px 0 0 0;
+font-weight: bold;
+color: #000;
+text-decoration: none;
+}
+
+  #masthead #about a:hover.more-info {
+text-decoration: underline;
+}
+  
+  #masthead #sponsors {
+}
+  
+  #sponsors ul li {
+margin-top: 5px;
+}
+  
+  #sponsors ul li img {
+width: 300px;
+}
+  
+  /*
+    Homepage content
+  */    
+
+#artists {
+margin: 0;
+}
+
+
+#artists li a,
+#sponsors li a {
+display: block;
+padding: 10px;
+min-height: 80px;
+float: left;
+margin-bottom: 10px;
+width: 140px;
+overflow: hidden;
+position: relative;
+text-decoration: none;
+}
+
+#artists li a:hover,
+#sponsors li a:hover {
+display: block;
+padding: 10px;
+background: #9BC500;
+}
+  
+#sponsors li a {
+width: 300px;
+}
+
+  #content #artists h2,
+  #content #sponsors h2 {
+font-weight: bold;
+font-size: 20px;
+margin:  0 5px 0 10px;
+}
+  
+  #content #artists li a h3 {
+text-decoration: none;
+color: #000;
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+  #content #artists li a:hover h3 {
+color: #fff;
+}
+  
+  #artists li img {
+padding: 0;
+margin: 0;
+}
+  
+  
+  /*
+    Event call-out
+  */
+  #content .event {
+position: absolute;
+top: 36px;
+left: 15px;
+line-height: 1.25;
+}
+  
+#artists span.type,
+#artists span.date,
+#artists span.place {
+display: inline;
+width: auto;
+background-color: rgba(160,160,160,0.7);
+color: #fff;
+padding: 3px 5px;
+margin: 3px 0;
+font-size: 13px;
+}
+
+#artists span.type {
+font-weight: bold;
+}
+  
+#artists a:hover span.type,
+#artists a:hover span.date,
+#artists a:hover span.place {
+display: inline;
+width: auto;
+background: #9BC500;
+color: #fff
+}
+
+#navigation {
+width: 150px;
+float: left;
+}
+
+#navigation ul {
+list-style: none;
+}
+
+
+#navigation h2 {
+font-weight: bold;
+font-size: 20px;
+padding: 5px 10px;
+}
+
+#navigation .artists,
+#navigation .partners {
+border-right: 1px solid #A4BE12;
+margin-bottom: 20px;
+}
+
+#navigation li a {
+display: block;
+color: #000;
+text-decoration: none;
+padding: 5px 10px;
+font-size: 14px;
+}
+
+
+#navigation li a:hover,
+#navigation li a.selected {
+background: #A4BE12;
+color: #fff;
+}
+
+
+#artist {
+width: 860px;
+margin-left: 160px;
+}
+
+#artist h2 {
+font-weight: bold;
+font-size: 20px;
+padding: 5px 0;
+}
+
+
+#artist #description {
+width: 200px;
+float: left;
+}
+
+
+#artist #description p {
+font-size: 12px;
+margin: 5px 10px 10px 0;
+}
+
+#artist #description p.highlight,
+#artist #description p.event-info {
+font-size: 12px;
+color: #fff;
+font-weight: bold;
+padding: 5px 10px;
+margin: 0 10px 10px 0;
+background: #A4BE12;
+}
+
+#artist #description p.link a {
+color: #000;
+}
+
+#artist span.date,
+#artist span.place {
+font-weight: normal;
+}

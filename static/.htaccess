@@ -1,0 +1,16 @@
+RewriteEngine On 
+
+# Going to /artist(/) gives a 500 error
+RewriteRule ^artist/$ / [R,L]
+
+# Map clean URL /artist/ARTIST_NAME to the physical
+# file /artist/artist_ARTIST_NAME.html.
+# No redirect occurs.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^artist/(.*)$ artist/artist_$1.html [L]
+
+RewriteRule ^about/$ about/index.html [L]
+
+# Map about pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^about/(.*)$ about/about_$1.html [L]

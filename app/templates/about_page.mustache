@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  {{>head}}
+  <body class="grid">
+    <div id="page"> 
+      {{>masthead}}
+
+      <div id="content">
+	      <div id="navigation">
+		      <ul class="artists">
+		      	<h2>Artists</h2>
+      			{{#artists}}
+      			<li><a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
+      			{{/artists}}
+      		</ul>
+          {{>partners_list}}
+      	</div> <!-- #navigation -->
+	
+	      <div id="artist">
+      		<h2>{{name}}</h2>
+      		<div id="description">
+      			{{{bio_as_html}}}
+      			{{#links}}
+      			<p class="link"><a href="{{url}}">{{text}}</a></p>
+      			{{/links}}
+      		</div> <!-- #description -->
+      	</div> <!-- #artist -->
+	
+	
+      </div> <!-- #content -->
+      <div id="footer"></div>
+    </div> <!-- #page -->
+  </body>
+</html>
