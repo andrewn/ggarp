@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activesupport (3.0.7)
     dalli (1.0.5)
     hpricot (0.8.4)
     json (1.5.1)
@@ -15,6 +16,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   dalli
   hpricot
   json
