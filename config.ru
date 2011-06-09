@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift(Dir.getwd)
+$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'app/web'
 
 run Web
