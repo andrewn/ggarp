@@ -1,3 +1,3 @@
-require 'app/web'
+require 'app/web.rb'
 
 run Web
