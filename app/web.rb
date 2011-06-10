@@ -8,13 +8,13 @@ class Web < Sinatra::Base
     require 'mustache/sinatra'
     register Mustache::Sinatra
     set :mustache, {
-      :views     => 'app/views/',
-      :templates => 'app/templates/'
+      :views     => 'app/views',
+      :templates => 'app/templates'
     }
 
-    require 'app/views/site'
-    require 'app/views/artist'
-    require 'app/model/content_store'
+    require './app/views/site'
+    require './app/views/artist'
+    require './app/model/content_store'
 
     # Caching
     require 'active_support/cache'
