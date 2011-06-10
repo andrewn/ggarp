@@ -15,6 +15,7 @@ class Web < Sinatra::Base
     require './app/views/site'
     require './app/views/artist_view_model'
     require './app/views/home'
+    require './app/views/artist'
     require './app/model/content_store'
 
     # Caching
@@ -71,9 +72,7 @@ class Web < Sinatra::Base
 
     get '/artist/:name' do |name|
         @current_artist = @artists.find {|a| a.name_as_url == name }
-        
         halt 404 if @current_artist.nil?
-        
         @current_artist.is_selected = true
         mustache :artist, :layout => false
     end
