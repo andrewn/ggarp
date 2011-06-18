@@ -27,6 +27,7 @@ class Web
                         each { |c| result[$1.to_sym] = c.inner_html if c.name =~ /gsx:(\w+)/ }
                       result
                     end
+                    p hash
                     #doc = Hpricot::XML(open("#{url}/2/public/values").read)
                     #(doc/'//entry').each do |e|
                     #  property = e.at('gsx:property').inner_html.downcase.to_sym
