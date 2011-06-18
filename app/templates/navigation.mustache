@@ -1,0 +1,18 @@
+<div id="content">
+  <div id="navigation">
+
+		<ul class="artists">
+			<h2>Artists</h2>
+			{{#artists}}
+			<li><a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
+			{{/artists}}
+		</ul>
+
+		<ul class="partners">
+			<h2>Supported by</h2>
+		  {{#partners}}
+			<li><a href="/partner/{{name_as_url}}" {{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
+		  {{/partners}}
+		</ul>
+
+</div> <!-- #navigation -->
