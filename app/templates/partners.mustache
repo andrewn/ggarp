@@ -3,10 +3,9 @@
     <ul class="reset">
       {{#partners}}
       <li>
-          <a href="{{url}}">
-              {{#logo}}
-              <img src="{{url}}" height="{{height}}" width="{{width}}" alt="{{name}}">
-              {{/logo}}
+          <a href="/partner/{{name_as_url}}">
+							<p>{{name}}</p>
+              <img src="{{logo}}" height="100" width="300" alt="{{name}}">
           </a>
       </li>
       {{/partners}}

@@ -13,7 +13,7 @@ class Web
                 @info[:name]
             end
             def name_as_url
-                @info[:name].gsub(' ', '_').downcase
+                @info[:name].gsub(' ', '_').downcase.gsub('é','e')
             end
             def highlight
                 @info[:highlight]
@@ -35,6 +35,9 @@ class Web
                     :url  => @info[:linkurl],
                     :text => @info[:linktext],
                 }
+            end
+            def thumb
+                "/artist/assets/#{name_as_url}_140.jpg"
             end
         end
     end

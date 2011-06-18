@@ -24,6 +24,9 @@ class Web
             def logo
                 @info[:logo]
             end
+            def logo
+                "/partner/assets/#{name_as_url}_300.jpg"
+            end
         end
     end
 end
