@@ -46,7 +46,7 @@ class Web < Sinatra::Base
       config.also_reload "app/model/*.rb"
       config.also_reload "app/views/*.rb"
 
-      #set :cache_time, 0
+      set :cache_time, 0
     end
 
     before do
