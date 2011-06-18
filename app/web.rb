@@ -16,6 +16,8 @@ class Web < Sinatra::Base
     require './app/views/artist_view_model'
     require './app/views/home'
     require './app/views/artist'
+    require './app/views/partner'
+    require './app/views/partner_view_model'
     require './app/model/content_store'
 
     # Caching
@@ -59,6 +61,12 @@ class Web < Sinatra::Base
             #if @current_artist and @artist_url == artist_model.name_as_url
             artist_model
         end
+        
+        @partners = @partners_data.map do |partner|
+            partner_model = Web::Views::PartnerViewModel.new(partner)
+            #if @current_partner and @partner_url == partner_model.name_as_url
+            partner_model
+        end
     end
 
     # Routes
@@ -75,6 +83,13 @@ class Web < Sinatra::Base
         halt 404 if @current_artist.nil?
         @current_artist.is_selected = true
         mustache :artist, :layout => false
+    end
+
+    get '/partner/:name' do |name|
+        @current_partner = @partners.find {|a| a.name_as_url == name }
+        halt 404 if @current_partner.nil?
+        @current_partner.is_selected = true
+        mustache :partner, :layout => false
     end
 
     get '/about/:name' do |name|

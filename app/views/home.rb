@@ -2,7 +2,7 @@ class Web
     module Views
         class Home < Site
             def title
-                "Homepage"
+                "Gulbenkian Galapagos Artists Residency Programme"
             end
             
             def ogurl

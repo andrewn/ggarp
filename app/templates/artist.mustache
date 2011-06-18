@@ -5,18 +5,9 @@
     <div id="page"> 
       {{>masthead}}
 
-      <div id="content">
-	      <div id="navigation">
-		      <ul class="artists">
-		      	<h2>Artists</h2>
-      			{{#artists}}
-      			<li><a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
-      			{{/artists}}
-      		</ul>
-          {{>partners_list}}
-      	</div> <!-- #navigation -->
+      {{>navigation}}
 	
-            {{#current_artist}}
+      {{#current_artist}}
 	      <div id="artist">
       		<h2>{{name}}</h2>
       		<div id="description">

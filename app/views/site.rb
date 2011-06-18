@@ -17,6 +17,9 @@ class Web
             def artists
                 @artists
             end
+            def partners
+                @partners
+            end
         end
     end
 end
