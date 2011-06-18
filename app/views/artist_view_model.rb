@@ -15,6 +15,9 @@ class Web
             def name_as_url
                 @info[:name].gsub(' ', '_').downcase
             end
+            def highlight
+                @info[:highlight]
+            end
             def current_artist_media
                 nil
                 # { :thumb => }
@@ -23,14 +26,14 @@ class Web
                 nil
                 # { :type => , :date => , :venue =>}
             end
-            def bio_as_html
+            def bio
                 @info[:bio]
             end
-            def link
+            def links
                 return unless @info[:linkurl] and @info[:linktext]
                 {
                     :url  => @info[:linkurl],
-                    :text => @info[:linktest],
+                    :text => @info[:linktext],
                 }
             end
         end

@@ -34,17 +34,17 @@
       			{{/links}}
       		</div> <!-- #description -->
       		<div id="gallery">
-      		  <ul>
-      			{{#media}}
-      			<li>
-      			  <a href="#media-{{media_id}}">
-      			    <img class="thumb" width="100" height="100" src="{{thumb}}" alt="img">
-      			  </a>
-      			  <img id="media-{{media_id}}" class="main" width="640" height="360" src="{{full}}" alt="img">
-      			<li>
-      	    {{/media}}   
-      	    </ul>
-      		</div> <!-- #gallery -->
+                        <ul>
+                              {{#media}}
+                              <li>
+                                    <a href="#media-{{media_id}}">
+                                          <img class="thumb" width="100" height="100" src="{{thumb}}" alt="img">
+                                    </a>
+                                    <img id="media-{{media_id}}" class="main" width="640" height="360" src="{{full}}" alt="img">
+                              <li>
+                              {{/media}}   
+                        </ul>
+                  </div> <!-- #gallery -->
       	</div> <!-- #artist -->
 	     {{/current_artist}}
 	
