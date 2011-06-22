@@ -2,7 +2,8 @@
 class Web
     module Views
         class ArtistViewModel
-            attr_accessor :is_selected
+            attr_accessor :is_selected, :media
+            @media = []
             def initialize(info, is_selected = false)
                 @info = info
                 @is_selected = is_selected

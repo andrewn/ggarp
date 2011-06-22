@@ -55,10 +55,16 @@ class Web < Sinatra::Base
         @site_data     = Web::Models::ContentStore.new(settings.cache_time).fetch(1)[:row]
         @artists_data  = Web::Models::ContentStore.new(settings.cache_time).fetch(2)[:row]
         @partners_data = Web::Models::ContentStore.new(settings.cache_time).fetch(3)[:row]
+        @media_data    = Web::Models::ContentStore.new(settings.cache_time).fetch(4)[:row]
 
         @artists = @artists_data.map do |artist|
             artist_model = Web::Views::ArtistViewModel.new(artist)
             #if @current_artist and @artist_url == artist_model.name_as_url
+
+            artist_model.media = @media_data.find_all do |media_item|
+                artist_model.name == media_item[:parent]
+            end
+            p artist_model
             artist_model
         end
         
