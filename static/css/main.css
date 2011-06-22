@@ -271,7 +271,6 @@ font-size: 14px;
 #navigation li a:hover,
 #navigation li a.selected {
 background: #A4BE12;
-font-weight: bold;
 color: #fff;
 }
 
@@ -328,4 +327,22 @@ color: #000;
 
 #sponsors a:hover p {
 color: #fff;
+}
+
+.thumbnails {
+list-style: none;
+}
+
+.thumbnails li {
+float: left;
+}
+
+.thumbnails li a {
+opacity: 0.5;
+filter: alpha(opacity = 50);
+}
+
+.thumbnails li a:hover {
+opacity: 1;
+filter: alpha(opacity = 100);
 }
