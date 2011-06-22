@@ -31,15 +31,22 @@
 					</div>
                         -->
       		<div id="gallery">
+                              <ul class="thumbnails">
                               {{#media}}
-                              <!--
-                                    <a href="#media-{{media_id}}">
-                                          <img class="thumb" width="100" height="100" src="{{thumb}}" alt="img">
-                                    </a>
-                              -->
-                                    <img class="main" width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
+                                    <li>
+                                          <a href="#media-{{media_id}}">
+                                                <img class="thumb" width="60px" height="34px" src="{{thumb_url}}" alt="Thumbnail for {{title}}">
+                                          </a>
+                                    </li>
+                              {{/media}}
+                              </ul>
+                              
+                              <div id="main">
+                              {{#media}}
+                                    <img id="main-{{media_id}}" width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
                                     <p>{{caption}}</p>
-                              {{/media}}   
+                              {{/media}}
+                              </div>  
                   </div>
       	</div> <!-- #artist -->
 	     {{/current_artist}}

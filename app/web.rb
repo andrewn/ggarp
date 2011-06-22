@@ -18,6 +18,7 @@ class Web < Sinatra::Base
     require './app/views/artist'
     require './app/views/partner'
     require './app/views/partner_view_model'
+    require './app/views/media_view_model'
     require './app/model/content_store'
 
     # Caching
@@ -57,14 +58,18 @@ class Web < Sinatra::Base
         @partners_data = Web::Models::ContentStore.new(settings.cache_time).fetch(3)[:row]
         @media_data    = Web::Models::ContentStore.new(settings.cache_time).fetch(4)[:row]
 
+        @media_models = @media_data.map do |media_item|
+            Web::Views::MediaViewModel.new(media_item)
+        end
+
         @artists = @artists_data.map do |artist|
             artist_model = Web::Views::ArtistViewModel.new(artist)
             #if @current_artist and @artist_url == artist_model.name_as_url
 
-            artist_model.media = @media_data.find_all do |media_item|
-                artist_model.name == media_item[:parent]
+            artist_model.media = @media_models.find_all do |media_item|
+                artist_model.name == media_item.parent
             end
-            p artist_model
+
             artist_model
         end
         

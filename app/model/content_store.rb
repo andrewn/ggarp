@@ -24,7 +24,7 @@ class Web
                       result = {}
                       e.children.
                         select { |c| !c.kind_of? Hpricot::Text }.
-                        each { |c| result[$1.to_sym] = c.inner_html if c.name =~ /gsx:(\w+)/ }
+                        each { |c| result[$1.to_sym] = c.inner_html if c.name =~ /gsx:(\w+)/  }
                       result
                     end
                     p hash
