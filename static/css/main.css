@@ -342,7 +342,8 @@ opacity: 0.5;
 filter: alpha(opacity = 50);
 }
 
-.thumbnails li a:hover {
+.thumbnails li a:hover,
+.thumbnails li.selected a {
 opacity: 1;
 filter: alpha(opacity = 100);
 }
