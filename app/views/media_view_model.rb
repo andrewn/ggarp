@@ -23,7 +23,7 @@ class Web
                 @info[:url]
             end
             def thumb_url
-                url.gsub(/(\.).{3}$/, '_thumb.')
+                url.gsub(/(\.)/, "_thumb.")
             end
             def parent
                 @info[:parent]
