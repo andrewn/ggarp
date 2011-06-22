@@ -136,10 +136,7 @@ text-decoration: underline;
   
   #masthead #sponsors {
 }
-  
-  #sponsors ul li {
-margin-top: 5px;
-}
+
   
   #sponsors ul li img {
 width: 300px;
@@ -150,7 +147,8 @@ width: 300px;
   */    
 
 #artists {
-margin: 0;
+margin: 0 0 20px;
+overflow: auto;
 }
 
 
@@ -178,11 +176,13 @@ background: #9BC500;
 width: 300px;
 }
 
-  #content #artists h2,
-  #content #sponsors h2 {
-font-weight: bold;
+#content #artists h2,
+#content #sponsors h2 {
+border-bottom: 1px solid #A4BE2B;
 font-size: 20px;
-margin:  0 5px 0 10px;
+font-weight: bold;
+margin: 0;
+padding: 0 10px 5px;
 }
   
   #content #artists li a h3 {
