@@ -20,6 +20,7 @@ class Web < Sinatra::Base
     require './app/views/partner_view_model'
     require './app/views/media_view_model'
     require './app/model/content_store'
+    require './app/helpers/text'
 
     # Caching
     require 'active_support/cache'
