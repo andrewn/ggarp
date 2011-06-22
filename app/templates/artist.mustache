@@ -30,20 +30,20 @@
 
 					</div>
                         -->
-      		<div id="gallery">
+      		<div id="gallery" class="use-slideshow">
                               <ul class="thumbnails">
                               {{#media}}
                                     <li>
                                           <a href="#media-{{media_id}}">
-                                                <img class="thumb" width="60px" height="34px" src="{{thumb_url}}" alt="Thumbnail for {{title}}">
+                                                <img class="thumb" src="{{thumb_url}}" alt="Thumbnail for {{title}}">
                                           </a>
                                     </li>
                               {{/media}}
                               </ul>
                               
-                              <div id="main">
+                              <div class="main">
                               {{#media}}
-                                    <img id="main-{{media_id}}" width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
+                                    <img id="media-{{media_id}}" width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
                                     <p>{{caption}}</p>
                               {{/media}}
                               </div>  
