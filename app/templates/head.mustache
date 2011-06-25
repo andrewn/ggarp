@@ -2,24 +2,36 @@
   <style>
     @import url('/css/main.css');
   </style>
-  <script data-main="/js/main.js" src="/js/lib/require-jquery.js"></script>
+
   <title>{{title}}</title>
   <meta property="og:title" content="{{title}}" />
   <meta property="og:type" content="{{ogtype}}" />
   <meta property="og:url" content="{{ogurl}}" />
 
 
+<!-- Dojo TO BE REMOVED... -->
   <script> 
     djConfig = {
         isDebug: false
     }
-</script> 
- 
+  </script> 
 <!-- Load dojo base from CDN --> 
 <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.4/dojo/dojo.xd.js"></script> 
- 
- 
- 
 <!-- Dojo layer, widgets --> 
 <script src="http://www.wilkinsonking.com/assets/js/wk.js"></script> 
+
+<!-- Requirejs -->
+  <script src="/js/lib/require.js"></script>
+  <script>
+    var ENV = (function(host){ return /(\.dev|:)/.test(host) ? "dev" : "production"; })(location.host);
+    require({
+        urlArgs: (ENV === "dev") ? "bust=" +  (new Date()).getTime() : null,
+        baseUrl: '/js',
+        paths: {
+            jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min'
+        },
+        priority: ['jquery']
+    }, ['main']);
+  </script>
+
 </head>

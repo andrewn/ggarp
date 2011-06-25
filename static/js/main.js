@@ -1,5 +1,8 @@
+
 require(['jquery'], function( $ ) {
-    $(function() {
-      
-    });
+    
+   $(document).ready(function() {
+       $('body').addClass('js');
+   });
+
 });
