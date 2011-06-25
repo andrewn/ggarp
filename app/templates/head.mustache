@@ -24,6 +24,7 @@
   <script src="/js/lib/require.js"></script>
   <script>
     var ENV = (function(host){ return /(\.dev|:)/.test(host) ? "dev" : "production"; })(location.host);
+
     require({
         urlArgs: (ENV === "dev") ? "bust=" +  (new Date()).getTime() : null,
         baseUrl: '/js',

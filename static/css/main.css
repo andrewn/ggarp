@@ -133,6 +133,10 @@ text-decoration: none;
   #masthead #about a:hover.more-info {
 text-decoration: underline;
 }
+
+  .js #masthead #about .more {
+    display: none;
+  }
   
   #masthead #sponsors {
 }

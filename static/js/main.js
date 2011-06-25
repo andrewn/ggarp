@@ -2,7 +2,14 @@
 require(['jquery'], function( $ ) {
     
    $(document).ready(function() {
-       $('body').addClass('js');
+
+        var moreInfoControl = $('.more-info'),
+            moreInfoContent = $('.more');
+
+        moreInfoControl.click(function(evt){
+            moreInfoContent.toggle('fast');
+            return false;
+        });
    });
 
 });
