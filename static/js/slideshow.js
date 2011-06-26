@@ -19,6 +19,9 @@ define(['jquery', 'util'], function ($, util) {
         // Remove main images from document
         slide = container.find( '.main' ).remove();
 
+        // Flag to indicate slideshow is on
+        container.addClass('slideshow');
+
         // Create a placeholder for the main image
         mainSlideContainer  = $('<div class="main-slide-container">'); 
         

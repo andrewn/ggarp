@@ -333,6 +333,16 @@ color: #000;
 color: #fff;
 }
 
+/*
+  Artist page gallery
+*/
+.js .use-slideshow {
+  display: none;
+}
+.js .slideshow {
+  display: block;
+}
+
 .thumbnails {
 list-style: none;
 }
