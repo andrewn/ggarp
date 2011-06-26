@@ -61,7 +61,7 @@ define(['jquery'], function ($) {
             );
         });
         
-        // checkIfImageShouldBeDisplayed( document.location.hash );
+        checkIfImageShouldBeDisplayed( document.location.hash );
         
         function checkIfImageShouldBeDisplayed( hash ) {
             if ( hash ) {
