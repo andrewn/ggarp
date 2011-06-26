@@ -11,7 +11,7 @@ require(['jquery', 'slideshow'], function( $, Slideshow ) {
             moreInfoContent = $('.more');
 
         moreInfoControl.click(function(evt){
-            moreInfoContent.toggle('fast');
+            moreInfoContent.slideToggle('fast');
             return false;
         });       
    }
