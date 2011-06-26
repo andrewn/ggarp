@@ -20,7 +20,7 @@ define(['jquery', 'util'], function ($, util) {
         opts = $.extend( {}, defaults, opts );
 
         // Remove main images from document
-        slide = container.find( '.main' ).remove();
+        slides = container.find( '.main' ).children().remove();
 
         // Flag to indicate slideshow is on
         container.addClass('slideshow');
@@ -28,11 +28,11 @@ define(['jquery', 'util'], function ($, util) {
         // Create a placeholder for the main image
         mainSlideContainer  = $('<div class="main-slide-container">'); 
         
-        container.append( mainSlideContainer );
+        container.find( '.main' ).append( mainSlideContainer );
 
         slideManager = new SlideManager( mainSlideContainer );
                 
-        slide.children().each( function( index, slide ) {
+        slides.each( function( index, slide ) {
             slideManager.add( $( slide ).attr('id'), slide );
         });
 /*
