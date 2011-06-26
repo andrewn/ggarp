@@ -13,23 +13,7 @@
       		<div id="description">
       			<p class="highlight">&quot;{{highlight}}&quot;</p>
       			{{{bio}}}
-      			{{#event}}
-      			<p class="event-info">
-      			    <span class="type">{{type}}</span><br />
-      			    <span class="date">{{date}}</span><br />
-      			    <span class="place">{{venue}}</span>
-      			</p>
-      			{{/event}}
-      			{{#links}}
-      			<p class="link"><a href="{{url}}">{{text}}</a></p>
-      			{{/links}}
       		</div> <!-- #description -->
-                     <!--   
-					<div id="gallery">
-							<img src="/artist/photos/{{name_as_url}}/1_640.jpg" alt="{{name}}" height="360" width="640">
-
-					</div>
-                        -->
       		<div id="gallery" class="use-slideshow">                              
                               <div class="main">
                               {{#media}}
@@ -51,6 +35,18 @@
                                     </li>
                               {{/media}}
                               </ul>
+                  </div>
+                  <div class="info">
+                        {{#event}}
+                        <p class="event-info">
+                            <span class="type">{{type}}</span><br />
+                            <span class="date">{{date}}</span><br />
+                            <span class="place">{{venue}}</span>
+                        </p>
+                        {{/event}}
+                        {{#links}}
+                        <p class="link"><a href="{{url}}">{{text}}</a></p>
+                        {{/links}}
                   </div>
       	</div> <!-- #artist -->
 	     {{/current_artist}}
