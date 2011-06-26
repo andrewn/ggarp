@@ -72,15 +72,10 @@ define(['jquery', 'util'], function ($, util) {
         }
 
         function showSlide(direction) {
-            // var currentSlide = thumbs.filter('.selected');
-            // console.log('currentSlide', currentSlide, thumbs);
-            var currentSlide = slideManager.currentSlideId,
-                newSlide;
-            if ( direction == 'next' && slideManager.hasSlide(currentSlide + 1) ) {
-                newSlide = currentSlide + 1;
-                slideManager.show(newSlide);
-                //thumbs.get(currentSlide).removeClass('selected');
-                //thumbs.get(newSlide).addClass('selected');
+            if ( direction == 'next') {
+                thumbManager.showNext();
+            } else if ( direction == 'prev') {
+                thumbManager.showPrevious();
             }
         }
         
@@ -102,6 +97,7 @@ define(['jquery', 'util'], function ($, util) {
         function ThumbManager(sel) {
             var container = $(sel),
                 thumbs    = container.children(),
+                self      = this,
                 current;
 
             // Set-up slide effects and click events on each item
@@ -109,38 +105,39 @@ define(['jquery', 'util'], function ($, util) {
                 var item = $( item );
                 item.click(
                     function (evt) {
-                        thumbs.removeClass('selected');
-                        item.addClass('selected');
-
-                        container.trigger('selected', item);
-                        
+                        show(index);
                         return false;
                     }
                 );
             });
+
+            function show (index) {
+                var item = $(thumbs.get(index));
+                thumbs.removeClass('selected');
+                if (item.length > 0) {
+                    item.addClass('selected');
+                    container.trigger('selected', item);
+                }
+                current = index;
+            }
+
             return {
                 showFirst: function () {
-                    this.show(0)
+                    show(0);
                 },
                 showNext: function () {
                     var next = current + 1;
                     if ( next < thumbs.length ) {
-                        this.show(next)
+                        show(next);
                     }
                 },
                 showPrevious: function () {
                     var prev = current - 1;
                     if ( prev >= 0 ) {
-                        this.show(prev)
+                        show(prev);
                     }
                 },
-                show: function (index) {
-                    thumbs.removeClass('selected');
-                    if (thumbs.get(index)) {
-                        $(thumbs.get(index)).addClass('selected');
-                    }
-                    current = index;
-                }
+                show: show
             }
         }
         
