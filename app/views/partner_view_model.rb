@@ -27,6 +27,12 @@ class Web
             def type
                 @info[:type]
             end
+            def location?
+                not @info[:location].nil?
+            end
+            def location
+                @info[:location]
+            end
             def logo
                 "/partner/assets/#{name_as_url}_300.jpg"
             end
