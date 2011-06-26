@@ -1,8 +1,9 @@
 
-require(['jquery'], function( $ ) {
+require(['jquery', 'slideshow'], function( $, Slideshow ) {
   
   $(document).ready(function() {
     initMoreInfo();
+    initSlideshow();
   });
 
    function initMoreInfo() {
@@ -13,6 +14,10 @@ require(['jquery'], function( $ ) {
             moreInfoContent.toggle('fast');
             return false;
         });       
+   }
+
+   function initSlideshow() {
+       new Slideshow('#gallery');
    }
 
 });
