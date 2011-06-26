@@ -9,25 +9,25 @@ define(['jquery', 'util'], function ($, util) {
             container       = $( container ),
             thumbsContainer = container.find('.thumbnails'),
             thumbs          = thumbsContainer.children(),
-            mainImageContainer,
-            imageManager,
-            images;
+            mainSlideContainer,
+            slideManager,
+            slides;
         
         // Apply defaults
         opts = $.extend( {}, defaults, opts );
 
         // Remove main images from document
-        images = container.find( '.main' ).remove();
+        slide = container.find( '.main' ).remove();
 
         // Create a placeholder for the main image
-        mainImageContainer  = $('<div class="main-image-container">'); 
+        mainSlideContainer  = $('<div class="main-slide-container">'); 
         
-        container.append( mainImageContainer );
+        container.append( mainSlideContainer );
 
-        imageManager = new ImageManager( mainImageContainer );
+        slideManager = new SlideManager( mainSlideContainer );
                 
-        images.children().each( function( index, image ) {
-            imageManager.add( $( image ).attr('id'), image );
+        slide.children().each( function( index, slide ) {
+            slideManager.add( $( slide ).attr('id'), slide );
         });
 /*
         // Need carousel?
@@ -39,22 +39,22 @@ define(['jquery', 'util'], function ($, util) {
             });
         }
   */      
-        function imageIdFromUrl( url ) {
+        function slideIdFromUrl( url ) {
             var parts = url.split('/'),
                 last  = parts[ parts.length - 1],
                 id    = last.replace('#', '');
             return id;
         }
 
-        // Set-up image effects and click events on each item
+        // Set-up slide effects and click events on each item
         thumbs.each( function ( index, item ){
             var item = $( item );
             item.click(
                 function (evt) {
                     thumbs.removeClass('selected');
                     
-                    var imageId = imageIdFromUrl( item.children('a').attr('href') );
-                    imageManager.show( imageId );
+                    var slideId = slideIdFromUrl( item.children('a').attr('href') );
+                    slideManager.show( slideId );
                     item.addClass( 'selected' );
                     return false;
                 }
@@ -67,19 +67,19 @@ define(['jquery', 'util'], function ($, util) {
             if ( hash ) {
                 var match = hash.match(/#(.*)$/);
                 var queryStringId = ( match.length > 1 ) ? match[1] : "";
-                imageManager.show( queryStringId );
+                slideManager.show( queryStringId );
             } else {
-                imageManager.showFirst();
+                slideManager.showFirst();
                 thumbs.first().addClass('selected');
             }
         }
         
         
         /**
-          * ImageManager
+          * SlideManager
           * @class
           */
-        function ImageManager( el, opts ) {
+        function SlideManager( el, opts ) {
                         
             var imageCache = {},
                 imageContainer = $(el),
@@ -102,12 +102,13 @@ define(['jquery', 'util'], function ($, util) {
             }
             
             function show(id) {
-                var item = get( id );                                
+                var item = get( id );      
                 if ( item ) {
                     fadeOut(
                         imageContainer,
                         function () {
-                            imageContainer.html( '<img src="' + item.src + '" />' );
+                            imageContainer.empty()
+                                          .append(item);
                             fadeIn( imageContainer );
                         }
                     );
