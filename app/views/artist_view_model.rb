@@ -31,6 +31,12 @@ class Web
             def bio
                 @info[:bio]
             end
+            def with?
+                not with.empty?
+            end
+            def with
+                @info[:with]
+            end
             def links
                 return unless @info[:linkurl] and @info[:linktext]
                 {

@@ -10,6 +10,7 @@
       {{#current_artist}}
 	      <div id="artist">
       		<h2>{{name}}</h2>
+                  {{#with?}}<p class="with">{{with}}</p>{{/with?}}
       		<div id="description">
       			<p class="highlight">&quot;{{highlight}}&quot;</p>
       			{{{bio}}}
