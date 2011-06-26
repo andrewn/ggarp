@@ -24,7 +24,12 @@ class Web
                 nil
                 # { :thumb => }
             end
+            def has_event?
+                not (@info[:exhibitiondate].empty? and @info[:exhibitiondate].empty?)
+            end
             def event
+                return nil unless has_event?
+
                 { 
                     :type => nil, 
                     :date => @info[:exhibitiondate], 
