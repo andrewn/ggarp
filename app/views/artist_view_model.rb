@@ -25,8 +25,11 @@ class Web
                 # { :thumb => }
             end
             def event
-                nil
-                # { :type => , :date => , :venue =>}
+                { 
+                    :type => nil, 
+                    :date => @info[:exhibitiondate], 
+                    :venue => @info[:exhibitiondescription]
+                }
             end
             def bio
                 @info[:bio]
