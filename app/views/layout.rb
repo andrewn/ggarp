@@ -1,8 +1,11 @@
 class Web
     module Views
-        class Site < Mustache
+        class Layout < Mustache
             def title
                 "GGARP"
+            end
+            def show_navigation?
+              true
             end
             def about
                 {

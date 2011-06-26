@@ -1,6 +1,6 @@
 class Web
     module Views
-        class Artist < Site
+        class Artist < Layout
             def title
                 "GGARP: #{@current_artist.name}"
             end

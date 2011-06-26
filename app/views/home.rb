@@ -1,6 +1,6 @@
 class Web
     module Views
-        class Home < Site
+        class Home < Layout
             def title
                 "Gulbenkian Galapagos Artists Residency Programme"
             end
@@ -12,7 +12,10 @@ class Web
             def ogtype
                 "website"
             end
-            
+
+            def show_navigation?
+                false
+            end            
         end
     end
 end

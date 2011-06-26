@@ -1,61 +1,41 @@
-<!DOCTYPE html>
-<html>
-  {{>head}}
-  <body class="grid">
-    <div id="page"> 
-      {{>masthead}}
-
-      {{>navigation}}
-	
-      {{#current_artist}}
-	      <div id="artist">
-      		<h2>{{name}}</h2>
-                  {{#with?}}<p class="with">with {{with}}</p>{{/with?}}
-      		<div id="description">
-      			<p class="highlight">&quot;{{highlight}}&quot;</p>
-      			{{{bio}}}
-      		</div> <!-- #description -->
-      		<div id="gallery" class="use-slideshow">                              
-                              <div class="main">
-                              {{#media}}
-                                    <div id="media-{{media_id}}">
-                                          <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
-                                          <p>{{title}}</p>
-                                    </div>
-                                    <!--
-                                    <img id="media-{{media_id}}" width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
-                                    -->
-                              {{/media}}
-                              </div>
-                              <ul class="thumbnails">
-                              {{#media}}
-                                    <li>
-                                          <a href="#media-{{media_id}}">
-                                                <img class="thumb" src="{{thumb_url}}" alt="Thumbnail for {{title}}">
-                                          </a>
-                                    </li>
-                              {{/media}}
-                              </ul>
+{{#current_artist}}
+<div id="artist">
+	<h2>{{name}}</h2>
+      {{#with?}}<p class="with">with {{with}}</p>{{/with?}}
+	<div id="description">
+		<p class="highlight">&quot;{{highlight}}&quot;</p>
+		{{{bio}}}
+	</div> <!-- #description -->
+	<div id="gallery" class="use-slideshow">                              
+                  <div class="main">
+                  {{#media}}
+                        <div id="media-{{media_id}}">
+                              <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
+                              <p>{{title}}</p>
+                        </div>
+                  {{/media}}
                   </div>
-                  <div class="info">
-                        {{#event}}
-                        <p class="event-info">
-                            <!-- <span class="type">{{!type}}</span><br /> -->
-                            <span class="date">{{date}}</span><br />
-                            <span class="place">{{venue}}</span>
-                        </p>
-                        {{/event}}
-                        {{#links}}
-                        <p class="link"><a href="{{url}}">{{text}}</a></p>
-                        {{/links}}
-                  </div>
-      	</div> <!-- #artist -->
-	     {{/current_artist}}
-	
-      </div> <!-- #content -->
-      <div id="footer"></div>
-    </div> <!-- #page -->
-
-    {{>end}}
-  </body>
-</html>
+                  <ul class="thumbnails">
+                  {{#media}}
+                        <li>
+                              <a href="#media-{{media_id}}">
+                                    <img class="thumb" src="{{thumb_url}}" alt="Thumbnail for {{title}}">
+                              </a>
+                        </li>
+                  {{/media}}
+                  </ul>
+      </div>
+      <div class="info">
+            {{#event}}
+            <p class="event-info">
+                <!-- <span class="type">{{!type}}</span><br /> -->
+                <span class="date">{{date}}</span><br />
+                <span class="place">{{venue}}</span>
+            </p>
+            {{/event}}
+            {{#links}}
+            <p class="link"><a href="{{url}}">{{text}}</a></p>
+            {{/links}}
+      </div>
+</div> <!-- #artist -->
+{{/current_artist}}
