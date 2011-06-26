@@ -27,6 +27,9 @@ class Web
             def type
                 @info[:type]
             end
+            def venue?
+                type == "venue"
+            end
             def location?
                 not @info[:location].nil?
             end

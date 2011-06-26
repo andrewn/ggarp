@@ -10,6 +10,9 @@
       {{#current_partner}}
 	      <div id="artist">
       		<h2>{{name}}</h2>
+                  {{#venue?}}
+                        {{#location?}}<p class="location">{{location}}</p>{{/location?}}
+                  {{/venue?}}
       		<div id="description">
       			<p class="highlight">&quot;{{quote}}&quot;</p>
       			{{description}}
