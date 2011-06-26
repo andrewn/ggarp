@@ -17,6 +17,9 @@ class Web
             def partners
                 @partners
             end
+            def venues
+              @venues
+            end
 
             private 
             def format(text, html_options={}, options={})

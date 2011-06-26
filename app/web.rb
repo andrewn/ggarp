@@ -74,11 +74,19 @@ class Web < Sinatra::Base
             artist_model
         end
         
-        @partners = @partners_data.map do |partner|
+        @all_partners = @partners_data.map do |partner|
             partner_model = Web::Views::PartnerViewModel.new(partner)
-            #if @current_partner and @partner_url == partner_model.name_as_url
             partner_model
         end
+
+        @partners = @all_partners.find_all do |partner|
+            partner.type == "partner"
+        end
+
+        @venues = @all_partners.find_all do |partner|
+            partner.type == "venue"
+        end
+
     end
 
     # Routes
@@ -99,6 +107,13 @@ class Web < Sinatra::Base
 
     get '/partner/:name' do |name|
         @current_partner = @partners.find {|a| a.name_as_url == name }
+        halt 404 if @current_partner.nil?
+        @current_partner.is_selected = true
+        mustache :partner, :layout => false
+    end
+
+    get '/venue/:name' do |name|
+        @current_partner = @venues.find {|a| a.name_as_url == name }
         halt 404 if @current_partner.nil?
         @current_partner.is_selected = true
         mustache :partner, :layout => false
