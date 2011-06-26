@@ -1,4 +1,4 @@
-define(['jquery'], function ($) {
+define(['jquery', 'util'], function ($, util) {
      
     var Slideshow = function( container, opts ) {
 
@@ -115,15 +115,11 @@ define(['jquery'], function ($) {
             }
             
             function fadeOut( el, cb ) {
-                console.log('fadeOut');
-                if (typeof cb == 'function') { cb(); }
-                //TODO: wk.util.fadeOut( el, { callback: cb, duration: opts.durationOut });
+                util.fadeOut( el, { callback: cb, duration: opts.durationOut });
             }
             
            function fadeIn( el, cb ) {
-               console.log('fadeIn');
-               if (typeof cb == 'function') { cb(); }
-               //TODO: wk.util.fadeIn( el, { callback: cb, duration: opts.durationIn });
+               util.fadeIn( el, { callback: cb, duration: opts.durationIn });
            }
             
             return {
