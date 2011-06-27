@@ -337,6 +337,7 @@ background: #A4BE12;
 #artist p.event-info {
   margin-left: 200px;
   font-size: 14px;
+  width: 30%;
 }
 
 #artist p.link a {
