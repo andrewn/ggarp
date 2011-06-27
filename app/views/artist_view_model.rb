@@ -56,6 +56,9 @@ class Web
             def thumb
                 "/artist/assets/#{name_as_url}_140.jpg"
             end
+            def media_thumbnails
+                media unless media.length < 2
+            end
         end
     end
 end
