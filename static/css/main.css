@@ -272,6 +272,7 @@ border-right: 1px solid #A4BE12;
 margin-bottom: 20px;
 }
 
+#navigation .venues li,
 #navigation li a {
 display: block;
 color: #000;
