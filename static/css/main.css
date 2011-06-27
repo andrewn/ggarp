@@ -225,6 +225,7 @@ line-height: 1.25;
   
 #artists span.type,
 #artists span.date,
+#artists span.desc,
 #artists span.place {
 display: inline;
 width: auto;
@@ -241,6 +242,7 @@ font-weight: bold;
   
 #artists a:hover span.type,
 #artists a:hover span.date,
+#artists a:hover span.desc,
 #artists a:hover span.place {
 display: inline;
 width: auto;
