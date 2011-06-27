@@ -18,7 +18,8 @@ class Web
                 @info[:name].gsub(' ', '_').downcase.gsub('é','e')
             end
             def highlight
-                @info[:highlight]
+                return if @info[:highlight].empty?
+                { :text => @info[:highlight] }
             end
             def current_artist_media
                 nil
