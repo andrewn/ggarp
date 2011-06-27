@@ -1,6 +1,6 @@
 class Web
     module Views
-        class Partner < Site
+        class Partner < Layout
             def title
                 "GGARP: #{@current_partner.name}"
             end

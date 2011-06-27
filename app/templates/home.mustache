@@ -1,39 +1,23 @@
-<!DOCTYPE html>
-<html>
-  {{> head }}
-  <body class="grid">
-    <div id="page">      
-      
-      {{>masthead}}
 
-      <div id="content">
-	      <div id="artists">
-	        <h2>Artists</h2>
-	        <ul class="reset">
-	          {{#artists}}
-	          <li>
-		          <a href="/artist/{{name_as_url}}">
-	              <h3>{{name}}</h3>
-	              <img width="140" height="100" src="{{thumb}}" alt="{{name}}">
-	              {{#event}}
-	              <p class="event">
-	                <span class="type">{{type}}</span><br />
-	                <span class="date">{{date}}</span><br />
-	                <span class="place">{{venue}}</span>
-	              </p>
-	              {{/event}}
-		          </a>
-	          </li>
-	          {{/artists}}
-	        </ul>
-	      </div> <!-- #artists -->
-	      
-	      {{>partners}}
+<div id="artists">
+<h2>Artists</h2>
+<ul class="reset">
+  {{#artists}}
+  <li>
+      <a href="/artist/{{name_as_url}}">
+      <h3>{{name}}</h3>
+      <img width="140" height="100" src="{{thumb}}" alt="{{name}}">
+      {{#event}}
+      <p class="event">
+        <!-- <span class="type">{{!type}}</span><br /> -->
+        <span class="date">{{date}}</span><br />
+        <span class="place">{{venue}}</span>
+      </p>
+      {{/event}}
+      </a>
+  </li>
+  {{/artists}}
+</ul>
+</div> <!-- #artists -->
 
-      </div><!-- #contents -->
-      
-      <div id="footer"></div>
-      
-    </div> <!-- #page -->
-  </body>
-</html>
+{{>partners}}

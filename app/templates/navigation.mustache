@@ -4,7 +4,9 @@
 		<ul class="artists">
 			<h2>Artists</h2>
 			{{#artists}}
-			<li><a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
+			<li>
+				<a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}{{#with?}} <span class="with">with {{with}}</span>{{/with?}}</a>
+			</li>
 			{{/artists}}
 		</ul>
 
@@ -13,6 +15,15 @@
 		  {{#partners}}
 			<li><a href="/partner/{{name_as_url}}" {{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
 		  {{/partners}}
+		</ul>
+
+		<ul class="partners">
+			<h2>Venues</h2>
+		  {{#venues}}
+			<li>
+				<a href="/venue/{{name_as_url}}" {{#is_selected}} class="selected"{{/is_selected}}>{{name}}{{#location?}} <span class="location">{{location}}</span>{{/location?}}</a>
+			</li>
+		  {{/venues}}
 		</ul>
 
 </div> <!-- #navigation -->

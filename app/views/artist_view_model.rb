@@ -18,18 +18,33 @@ class Web
                 @info[:name].gsub(' ', '_').downcase.gsub('é','e')
             end
             def highlight
-                @info[:highlight]
+                return if @info[:highlight].empty?
+                { :text => @info[:highlight] }
             end
             def current_artist_media
                 nil
                 # { :thumb => }
             end
+            def has_event?
+                not (@info[:exhibitiondate].empty? and @info[:exhibitiondate].empty?)
+            end
             def event
-                nil
-                # { :type => , :date => , :venue =>}
+                return nil unless has_event?
+
+                { 
+                    :type => nil, 
+                    :date => @info[:exhibitiondate], 
+                    :venue => @info[:exhibitiondescription]
+                }
             end
             def bio
                 @info[:bio]
+            end
+            def with?
+                not with.empty?
+            end
+            def with
+                @info[:with]
             end
             def links
                 return unless @info[:linkurl] and @info[:linktext]
@@ -40,6 +55,9 @@ class Web
             end
             def thumb
                 "/artist/assets/#{name_as_url}_140.jpg"
+            end
+            def media_thumbnails
+                media unless media.length < 2
             end
         end
     end

@@ -24,6 +24,18 @@ class Web
             def logo
                 @info[:logo]
             end
+            def type
+                @info[:type]
+            end
+            def venue?
+                type == "venue"
+            end
+            def location?
+                not @info[:location].empty?
+            end
+            def location
+                @info[:location]
+            end
             def logo
                 "/partner/assets/#{name_as_url}_300.jpg"
             end

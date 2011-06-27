@@ -12,7 +12,7 @@ class Web < Sinatra::Base
       :templates => 'app/templates'
     }
 
-    require './app/views/site'
+    require './app/views/layout'
     require './app/views/artist_view_model'
     require './app/views/home'
     require './app/views/artist'
@@ -74,11 +74,19 @@ class Web < Sinatra::Base
             artist_model
         end
         
-        @partners = @partners_data.map do |partner|
+        @all_partners = @partners_data.map do |partner|
             partner_model = Web::Views::PartnerViewModel.new(partner)
-            #if @current_partner and @partner_url == partner_model.name_as_url
             partner_model
         end
+
+        @partners = @all_partners.find_all do |partner|
+            partner.type == "partner"
+        end
+
+        @venues = @all_partners.find_all do |partner|
+            partner.type == "venue"
+        end
+
     end
 
     # Routes
@@ -87,21 +95,28 @@ class Web < Sinatra::Base
     end
 
     get '/' do
-        mustache :home, :layout => false
+        mustache :home
     end
 
     get '/artist/:name' do |name|
         @current_artist = @artists.find {|a| a.name_as_url == name }
         halt 404 if @current_artist.nil?
         @current_artist.is_selected = true
-        mustache :artist, :layout => false
+        mustache :artist
     end
 
     get '/partner/:name' do |name|
         @current_partner = @partners.find {|a| a.name_as_url == name }
         halt 404 if @current_partner.nil?
         @current_partner.is_selected = true
-        mustache :partner, :layout => false
+        mustache :partner
+    end
+
+    get '/venue/:name' do |name|
+        @current_partner = @venues.find {|a| a.name_as_url == name }
+        halt 404 if @current_partner.nil?
+        @current_partner.is_selected = true
+        mustache :partner
     end
 
     get '/about/:name' do |name|

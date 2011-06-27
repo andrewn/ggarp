@@ -26,7 +26,7 @@ margin: 0;
   */
 
 #page {
-width: 960px;
+width: 1000px;
 margin: 0 auto;
 }
   
@@ -60,7 +60,7 @@ padding: 0;
 margin: 0;
 list-style: none;
 }
-  
+
   #footer,
   .clear {
 clear: both;
@@ -69,6 +69,13 @@ clear: both;
   #content {
 margin: 20px 0 0 0;
 padding: 0;
+}
+
+#footer {
+  margin-top: 20px;
+  margin-right: 10px;
+  text-align: right;
+  font-size: 12px;
 }
   
   #content ul {
@@ -133,6 +140,10 @@ text-decoration: none;
   #masthead #about a:hover.more-info {
 text-decoration: underline;
 }
+
+  .js #masthead #about .more {
+    display: none;
+  }
   
   #masthead #sponsors {
 }
@@ -274,6 +285,11 @@ background: #A4BE12;
 color: #fff;
 }
 
+#navigation li a .with {
+  display: block;
+  font-size: 12px;
+}
+
 
 #artist {
 width: 860px;
@@ -310,7 +326,7 @@ margin: 0 10px 10px 0;
 background: #A4BE12;
 }
 
-#artist #description p.link a {
+#artist p.link a {
 color: #000;
 }
 
@@ -329,6 +345,16 @@ color: #000;
 color: #fff;
 }
 
+/*
+  Artist page gallery
+*/
+.js .use-slideshow {
+  display: none;
+}
+.js .slideshow {
+  display: block;
+}
+
 .thumbnails {
 list-style: none;
 }
@@ -342,7 +368,8 @@ opacity: 0.5;
 filter: alpha(opacity = 50);
 }
 
-.thumbnails li a:hover {
+.thumbnails li a:hover,
+.thumbnails li.selected a {
 opacity: 1;
 filter: alpha(opacity = 100);
 }

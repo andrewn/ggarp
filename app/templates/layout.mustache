@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  {{> head }}
+  <body class="grid">
+    <div id="page">      
+      
+      {{>masthead}}
+
+      <div id="content">
+        {{#show_navigation?}}
+          {{>navigation}}
+        {{/show_navigation?}} 
+
+        {{{yield}}}
+
+        {{>footer}}
+      </div><!-- #contents -->
+      
+    </div> <!-- #page -->
+
+    {{>end}}
+    
+  </body>
+</html>
