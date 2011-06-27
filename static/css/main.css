@@ -288,7 +288,8 @@ background: #A4BE12;
 color: #fff;
 }
 
-#navigation li a .with {
+#navigation li a .with,
+#navigation li .location {
   display: block;
   font-size: 12px;
 }
