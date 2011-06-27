@@ -318,14 +318,23 @@ font-size: 12px;
 margin: 5px 10px 10px 0;
 }
 
-#artist #description p.highlight,
-#artist #description p.event-info {
+#artist p.highlight,
+#artist p.event-info {
 font-size: 12px;
 color: #fff;
 font-weight: bold;
 padding: 5px 10px;
 margin: 0 10px 10px 0;
 background: #A4BE12;
+}
+
+#artist .info {
+  margin-top:10px;
+}
+
+#artist p.event-info {
+  margin-left: 200px;
+  font-size: 14px;
 }
 
 #artist p.link a {
