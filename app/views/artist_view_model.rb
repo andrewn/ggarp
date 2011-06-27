@@ -34,7 +34,8 @@ class Web
                 { 
                     :type => nil, 
                     :date => @info[:exhibitiondate], 
-                    :venue => @info[:exhibitiondescription]
+                    :description => @info[:exhibitiondescription],
+                    :venue => @info[:exhibitionvenue]
                 }
             end
             def bio
