@@ -7,14 +7,6 @@
 		{{{bio}}}
 	</div> <!-- #description -->
 	<div id="gallery" class="use-slideshow">                              
-                  <div class="main">
-                  {{#media}}
-                        <div id="media-{{media_id}}">
-                              <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
-                              <p>{{title}}</p>
-                        </div>
-                  {{/media}}
-                  </div>
                   <ul class="thumbnails">
                   {{#media_thumbnails}}
                         <li>
@@ -24,6 +16,14 @@
                         </li>
                   {{/media_thumbnails}}
                   </ul>
+                  <div class="main">
+                  {{#media}}
+                        <div id="media-{{media_id}}">
+                              <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
+                              <p>{{title}}</p>
+                        </div>
+                  {{/media}}
+                  </div>
       </div>
       <div class="info">
             {{#event}}
