@@ -18,9 +18,10 @@
                   </ul>
                   <div class="main">
                   {{#media}}
-                        <div id="media-{{media_id}}">
-                              <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}">
-                              <p>{{title}}</p>
+                        <div id="media-{{media_id}}" class="image">
+                              <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}" title="{{credit}}">
+                              <p class="title">{{title}}</p>
+															<p class="credit">&#169; {{credit}}</p>
                         </div>
                   {{/media}}
                   </div>
@@ -28,9 +29,10 @@
       <div class="info">
             {{#event}}
             <p class="event-info">
-                <!-- <span class="type">{{!type}}</span><br /> -->
-                <span class="date">{{date}}</span><br />
-                <span class="desc">{{description}}</span><br />
+								
+                <span class="type">EXHIBTION</span>
+                <span class="date">{{date}}</span>
+                <span class="desc">{{description}}</span>
                 <span class="place">{{venue}}</span>
             </p>
             {{/event}}
