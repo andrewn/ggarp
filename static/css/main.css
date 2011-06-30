@@ -32,7 +32,7 @@ margin: 0 auto;
   
   #content {
 min-width: 640px;
-max-width: 960px;
+max-width: 1000px;
 }
   
   
@@ -91,7 +91,7 @@ padding: 0;
 margin: 0;
 position: relative;
 font-size: 12px;
-width: 980px;
+width: 1000px;
 padding: 0;
 overflow: hidden;
 }
@@ -167,10 +167,10 @@ overflow: auto;
 #artists li a,
 #sponsors li a {
 display: block;
-padding: 10px;
+padding: 10px 12px;
 min-height: 80px;
 float: left;
-margin-bottom: 10px;
+margin: 0 2px 11px 0;
 width: 140px;
 overflow: hidden;
 position: relative;
@@ -180,12 +180,13 @@ text-decoration: none;
 #artists li a:hover,
 #sponsors li a:hover {
 display: block;
-padding: 10px;
+padding: 10px 12px;
 background: #9BC500;
 }
   
 #sponsors li a {
 width: 300px;
+margin: 0 9px 11px 0;
 }
 
 #content #artists h2,
@@ -311,7 +312,7 @@ padding: 5px 0;
 #artist #description {
 width: 200px;
 float: left;
-font-size: 14px;
+font-size: 12px;
 line-height: 1.3;
 }
 
