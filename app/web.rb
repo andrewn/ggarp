@@ -65,7 +65,6 @@ class Web < Sinatra::Base
 
         @artists = @artists_data.map do |artist|
             artist_model = Web::Views::ArtistViewModel.new(artist)
-            #if @current_artist and @artist_url == artist_model.name_as_url
 
             artist_model.media = @media_models.find_all do |media_item|
                 artist_model.name == media_item.parent
