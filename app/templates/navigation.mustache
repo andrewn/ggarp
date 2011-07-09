@@ -3,9 +3,11 @@
 		<ul class="artists">
 			<h2>Artists</h2>
 			{{#artists}}
-			<li>
-				<a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}{{#with?}} <span class="with">with {{with}}</span>{{/with?}}</a>
-			</li>
+				{{#published?}}
+				<li>
+					<a href="/artist/{{name_as_url}}"{{#is_selected}} class="selected"{{/is_selected}}>{{name}}{{#with?}} <span class="with">with {{with}}</span>{{/with?}}</a>
+				</li>
+				{{/published?}}
 			{{/artists}}
 		</ul>
 

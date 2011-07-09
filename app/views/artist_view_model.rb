@@ -60,6 +60,9 @@ class Web
             def media_thumbnails
                 media unless media.length < 2
             end
+            def published?
+                @info[:published] === 'yes'
+            end
         end
     end
 end

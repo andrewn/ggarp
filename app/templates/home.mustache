@@ -3,20 +3,22 @@
 <h2>Artists</h2>
 <ul class="reset">
   {{#artists}}
-  <li>
-      <a href="/artist/{{name_as_url}}">
-      <h3>{{name}}</h3>
-      <img width="140" height="100" src="{{thumb}}" alt="{{name}}" title="More about {{name}}">
-      {{#event}}
-      <p class="event">
-        <!-- <span class="type">{{!type}}</span><br /> -->
-        <span class="date">{{date}}</span><br />
-        <span class="desc">{{description}}</span><br />        
-        <span class="place">{{venue}}</span>
-      </p>
-      {{/event}}
-      </a>
-  </li>
+    {{#published?}}
+    <li>
+        <a href="/artist/{{name_as_url}}">
+        <h3>{{name}}</h3>
+        <img width="140" height="100" src="{{thumb}}" alt="{{name}}" title="More about {{name}}">
+        {{#event}}
+        <p class="event">
+          <!-- <span class="type">{{!type}}</span><br /> -->
+          <span class="date">{{date}}</span><br />
+          <span class="desc">{{description}}</span><br />        
+          <span class="place">{{venue}}</span>
+        </p>
+        {{/event}}
+        </a>
+    </li>
+    {{/published?}}
   {{/artists}}
 </ul>
 </div> <!-- #artists -->
