@@ -14,16 +14,20 @@
 		<ul class="partners">
 			<h2>Supported by</h2>
 		  {{#partners}}
+			{{#published?}}
 			<li><a href="/partner/{{name_as_url}}" {{#is_selected}} class="selected"{{/is_selected}}>{{name}}</a></li>
+			{{/published?}}
 		  {{/partners}}
 		</ul>
 
 		<ul class="partners venues">
 			<h2>Exhibition partners</h2>
 		  {{#venues}}
+		  	{{#published?}}
 			<li>
 				<!-- <a href="/venue/{{name_as_url}}" {{#is_selected}} class="selected"{{/is_selected}}> -->{{name}}{{#location?}} <span class="location">{{location}}</span>{{/location?}}<!-- </a> -->
 			</li>
+			{{/published?}}
 		  {{/venues}}
 		</ul>
 

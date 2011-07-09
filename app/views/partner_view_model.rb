@@ -39,6 +39,9 @@ class Web
             def logo
                 "/partner/assets/#{name_as_url}_300.jpg"
             end
+            def published?
+                @info[:published] === 'yes'
+            end
         end
     end
 end
