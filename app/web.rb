@@ -22,6 +22,13 @@ class Web < Sinatra::Base
     require './app/model/content_store'
     require './app/helpers/text'
 
+    # Authentication for production only (pre-release)
+    configure :staging do 
+      use Rack::Auth::Basic do |username, password|
+        username == 'ggarp' && password == 'artist'
+      end
+    end
+
     # Caching
     require 'active_support/cache'
     require 'active_support/cache/dalli_store'
