@@ -158,6 +158,10 @@ text-decoration: underline;
   .js #masthead #about .more {
     display: none;
   }
+
+  #masthead #about p {
+    padding-bottom: 10px;
+  }
   
   #masthead #sponsors {
 }
