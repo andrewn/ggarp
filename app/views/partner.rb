@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Web
     module Views
         class Partner < Layout

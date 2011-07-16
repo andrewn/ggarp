@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Web
     module Views
         class Layout < Mustache
@@ -26,6 +27,10 @@ class Web
             def has_published_venues?
               @published_venue = @venues.find { |venue| venue.published? }
               !@published_venue.nil?
+            end
+
+            def copyright
+              "&copy; Galápagos Conservation Trust 2011"
             end
 
             private 

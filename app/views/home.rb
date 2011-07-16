@@ -1,12 +1,13 @@
+# encoding: utf-8
 class Web
     module Views
         class Home < Layout
             def title
-                "Gulbenkian Galapagos Artists Residency Programme"
+                "Gulbenkian Galápagos Artists Residency Programme"
             end
             
             def ogurl
-                "http://ggarp.com"
+                "http://www.artistsvisitgalapagos.com"
             end
             
             def ogtype
