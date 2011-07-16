@@ -2,8 +2,11 @@
 class Web
     module Views
         class Layout < Mustache
+            def logo
+              "Galápagos Gulbenkian Artists' Residency Programme"
+            end
             def title
-                "GGARP"
+                "Galápagos Gulbenkian Artists' Residency Programme"
             end
             def show_navigation?
               true
