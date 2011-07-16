@@ -25,7 +25,7 @@ define(['jquery', 'util'], function ($, util) {
         // Flag to indicate slideshow is on
         container.addClass('slideshow');
 
-        // Create a placeholder for the main image
+        // Create a placeholder for the slides
         mainSlideContainer  = $('<div class="main-slide-container">'); 
         
         container.find( '.main' ).append( mainSlideContainer );
@@ -88,7 +88,7 @@ define(['jquery', 'util'], function ($, util) {
            //     slideManager.show( queryStringId );
            //     thumbManager.show( queryStringId.replace('media-', '') );
            // } else {
-                slideManager.showFirst();
+                //slideManager.showFirst();
                 thumbManager.showFirst();
            // }
         }
@@ -146,18 +146,26 @@ define(['jquery', 'util'], function ($, util) {
           * @class
           */
         function SlideManager( el, opts ) {
+ 
+            FRONT = 20;
+            BACK  = 10;
                         
             var imageCache = {},
                 imageContainer = $(el),
+                backSlide  = $('<div class="a"></div>').css('z-index', BACK),
+                frontSlide = $('<div class="b"></div>').css('z-index', FRONT),
                 firstImageId,
                 opts = opts || {},
                 defaults = {
                     durationIn: 200,
                     durationOut: 200
                 };
-                
+
             opts = $.extend( {}, defaults, opts );
             
+            imageContainer.append(backSlide);
+            imageContainer.append(frontSlide);
+
             function add( id, img ) {                
                 if (!firstImageId) { firstImageId = id; }
                 imageCache[id] = img;
@@ -168,16 +176,36 @@ define(['jquery', 'util'], function ($, util) {
             }
             
             function show(id) {
-                var item = get( id );      
+                var item = get( id );    
                 if ( item ) {
+
+                    // Load item behind current
+                    backSlide.empty().append(item) //.show();
+
                     fadeOut(
-                        imageContainer,
+                        frontSlide,
                         function () {
-                            imageContainer.empty()
-                                          .append(item);
-                            fadeIn( imageContainer );
+
+                            frontSlide.css('opacity', 0);
+
+                            var tmp = frontSlide;
+                            frontSlide = backSlide;
+                            frontSlide.css('z-index', FRONT);
+                            backSlide = tmp;
+                            backSlide.css('z-index', BACK);
+
+                            backSlide.css('opacity', 1)
                         }
                     );
+
+                    //fadeOut(
+                    //    imageContainer,
+                    //    function () {
+                    //        imageContainer.empty()
+                    //                      .append(item);
+                    //        fadeIn( imageContainer );
+                    //    }
+                    //);
                 }
                 this.currentSlideId = id;
             }

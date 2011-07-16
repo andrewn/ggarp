@@ -440,8 +440,13 @@ filter: alpha(opacity = 100);
 overflow: hidden;
 }
 
-.main div {
+.main-slide-container {
 position: relative;
+height: 390px;
+}
+
+.main-slide-container > div {
+  position: absolute;
 }
 
 .main p.title {
