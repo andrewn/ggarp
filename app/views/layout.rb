@@ -23,6 +23,10 @@ class Web
             def venues
               @venues
             end
+            def has_published_venues?
+              @published_venue = @venues.find { |venue| venue.published? }
+              !@published_venue.nil?
+            end
 
             private 
             def format(text, html_options={}, options={})
