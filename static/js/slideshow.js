@@ -1,4 +1,4 @@
-define(['jquery', 'util'], function ($, util) {
+define(['jquery'], function ($, util) {
     
     var KEY_RIGHT = 39,
         KEY_LEFT  = 37;
@@ -33,8 +33,10 @@ define(['jquery', 'util'], function ($, util) {
         slideManager = new SlideManager( mainSlideContainer );
                 
         slides.each( function( index, slide ) {
-            slideManager.add( $( slide ).attr('id'), slide );
+            var $slide = $(slide);
+            slideManager.add($slide.attr('id'), slide);
         });
+
 /*
         // Need carousel?
         var shouldUseCarousel = ( thumbs.length > opts.minimum ) ? true : false;
@@ -181,11 +183,25 @@ define(['jquery', 'util'], function ($, util) {
 
                     // Load item behind current
                     backSlide.empty().append(item) //.show();
+                    
+                    var newItemHeight = $(item).height();
 
-                    fadeOut(
-                        frontSlide,
-                        function () {
+                    imageContainer.animate(
+                        {
+                            height: newItemHeight
+                        },
+                        {
+                            duration: opts.durationOut
+                        }
+                    )
 
+                    frontSlide.animate(
+                    {
+                        opacity: 0
+                    },
+                    {
+                        duration: opts.durationOut,
+                        complete: function () {
                             frontSlide.css('opacity', 0);
 
                             var tmp = frontSlide;
@@ -196,27 +212,10 @@ define(['jquery', 'util'], function ($, util) {
 
                             backSlide.css('opacity', 1)
                         }
-                    );
-
-                    //fadeOut(
-                    //    imageContainer,
-                    //    function () {
-                    //        imageContainer.empty()
-                    //                      .append(item);
-                    //        fadeIn( imageContainer );
-                    //    }
-                    //);
+                    });
                 }
                 this.currentSlideId = id;
             }
-            
-            function fadeOut( el, cb ) {
-                util.fadeOut( el, { callback: cb, duration: opts.durationOut });
-            }
-            
-           function fadeIn( el, cb ) {
-               util.fadeIn( el, { callback: cb, duration: opts.durationIn });
-           }
             
             return {
                 get     : get,

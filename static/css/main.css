@@ -449,8 +449,10 @@ overflow: hidden;
 
 .main-slide-container {
 position: relative;
+/*
 min-height: 510px;
 max-height: 1000px;
+*/
 }
 
 .main-slide-container > div {
