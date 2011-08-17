@@ -473,3 +473,7 @@ font-weight: bold;
 background: #fff;
 display: block;	
 }
+
+em {
+  font-style: italic;
+}
