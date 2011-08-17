@@ -14,7 +14,7 @@ class Web
                 @info[:id]
             end
             def title
-                @info[:title]
+                markdown @info[:title]
             end
             def credit
                 @info[:credit]
@@ -33,6 +33,16 @@ class Web
             end
             def height
                 @info[:height]
+            end
+
+            private
+            def markdown(text)
+              matches = /\*(.*)\*/.match(text)
+              if matches and matches.length > 1
+                return text.gsub(matches[0], "<em>#{matches[1]}</em>")
+            else
+                return text
+            end
             end
         end
     end
