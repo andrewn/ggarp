@@ -14,16 +14,13 @@ class Web
                 @info[:name]
             end
             def name_as_url
-                @info[:name].gsub(' ', '_').downcase
+                @info[:name].gsub(' ', '_').downcase.gsub('á','a')
             end
             def description
                 @info[:description]
             end
             def quote
                 @info[:quote]
-            end
-            def logo
-                @info[:logo]
             end
             def type
                 @info[:type]
