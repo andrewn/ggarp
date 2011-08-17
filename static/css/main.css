@@ -324,6 +324,11 @@ font-size: 24px;
 padding: 5px 0;
 }
 
+#artist h2 .with {
+  font-weight: normal;
+  font-size: 20px;
+}
+
 
 #artist #description {
 width: 200px;

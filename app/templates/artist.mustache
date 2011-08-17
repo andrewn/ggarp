@@ -1,7 +1,6 @@
 {{#current_artist}}
 <div id="artist">
-	<h2>{{name}}</h2>
-      {{#with?}}<p class="with">with {{with}}</p>{{/with?}}
+	<h2>{{name}}{{#with?}}<span class="with"> with {{with}}</span>{{/with?}}</h2>
 	<div id="description">
 		{{#highlight}}<p class="highlight">&quot;{{text}}&quot;</p>{{/highlight}}
 		<p>{{{bio}}}</p>
