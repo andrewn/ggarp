@@ -38,6 +38,7 @@ class Web
             private
             def markdown(text)
               matches = /\*(.*)\*/.match(text)
+              text.gsub!(/\n/, "<br/>")
               if matches and matches.length > 1
                 return text.gsub(matches[0], "<em>#{matches[1]}</em>")
             else

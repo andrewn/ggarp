@@ -9,7 +9,9 @@ class Web
                 @info[:name].gsub(' ', '_').downcase.gsub('á','a')
             end
             def description
-                @info[:description]
+                text = @info[:description]
+                text.gsub!(/\n/, "<br/>")
+                text
             end
             def type
                 @info[:type]

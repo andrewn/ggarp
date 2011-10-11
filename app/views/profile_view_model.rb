@@ -39,7 +39,9 @@ class Web
                 }
             end
             def bio
-                @info[:bio]
+                text = @info[:bio]
+                text.gsub!(/\n/, "<br/>")
+                text
             end
             def with?
                 not with.empty?
