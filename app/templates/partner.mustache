@@ -5,8 +5,8 @@
             {{#location?}}<p class="location">{{location}}</p>{{/location?}}
       {{/venue?}}
 	<div id="description">
-		<p class="highlight">&quot;{{quote}}&quot;</p>
-		{{description}}
+            {{#highlight}}<p class="highlight">&quot;{{text}}&quot;</p>{{/highlight}}
+		<p>{{description}}</p>
 		{{#links}}
 		<p class="link"><a href="{{url}}">{{text}}</a></p>
 		{{/links}}

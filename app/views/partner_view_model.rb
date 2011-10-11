@@ -11,9 +11,6 @@ class Web
             def description
                 @info[:description]
             end
-            def quote
-                @info[:quote]
-            end
             def type
                 @info[:type]
             end
