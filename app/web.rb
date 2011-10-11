@@ -50,6 +50,12 @@ class Web < Sinatra::Base
     # How long to cache data for
     set :cache_time, 2
 
+    # HTTP Caching of generated pages
+    # will be handled by Varnish on heroku
+    # All we have to do is set the correct 
+    # headers
+    set :page_cache_time, 2 * 60
+
     # Development
     require "sinatra/reloader" if development?
     configure :development do | config |
@@ -60,6 +66,7 @@ class Web < Sinatra::Base
       config.also_reload "app/views/*.rb"
 
       set :cache_time, 0
+      set :page_cache_time, 0
     end
 
     before do
@@ -100,6 +107,13 @@ class Web < Sinatra::Base
             partner.type == "venue"
         end
 
+        # Set the default cach time here
+        # Routes can override this.
+        @cache_max_age = settings.page_cache_time
+    end
+
+    after do
+      headers "Cache-Control" => "max-age=#{@cache_max_age}" if @cache_max_age
     end
 
     # Routes
