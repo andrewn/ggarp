@@ -99,10 +99,11 @@ overflow: hidden;
 text-decoration: none;
 }
   
-  #masthead #logotype {
+#masthead #logotype {
 float: left;
 height: 220px;
 width: 200px;
+margin-top: 15px;
 clear: none;
 background: transparent url('/img/logotype.png') no-repeat;
 }
@@ -110,7 +111,7 @@ background: transparent url('/img/logotype.png') no-repeat;
   
 #masthead #logotype span {
   position: absolute;
-  top: 45px;
+  top: 60px;
   left: 20px;
   width: 100px;
   
