@@ -113,7 +113,7 @@ class Web < Sinatra::Base
     end
 
     after do
-      headers "Cache-Control" => "max-age=#{@cache_max_age}" if @cache_max_age
+      headers "Cache-Control" => "public, max-age=#{@cache_max_age}" if @cache_max_age
     end
 
     # Routes
