@@ -72,10 +72,12 @@ padding: 0;
 }
 
 #footer {
-  margin-top: 20px;
+  padding-top: 40px;
   margin-right: 10px;
   text-align: right;
   font-size: 12px;
+display: block;
+font-weight: bold;
 }
   
   #content ul {
@@ -502,4 +504,8 @@ display: block;
 
 em {
   font-style: italic;
+}
+
+#share {
+float: left;
 }
