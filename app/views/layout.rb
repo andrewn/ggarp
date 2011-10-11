@@ -38,7 +38,7 @@ class Web
 
             private 
             def format(text)
-              text.gsub(/\n{1,2}/, "<p>")
+              "<p>" + text.gsub(/\n{1,2}/, "<p>")
             end
 
             # This is buggy and seems to create more and more
