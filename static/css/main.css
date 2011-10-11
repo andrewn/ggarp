@@ -190,9 +190,6 @@ overflow: auto;
 
 #artists li:hover,
 #sponsors li:hover {
-  display: block;
-  padding: 10px 12px;
-
   background: #9BC500;
 }
 
