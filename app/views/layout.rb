@@ -3,10 +3,10 @@ class Web
     module Views
         class Layout < Mustache
             def logo
-              "Galápagos Gulbenkian Artists' Residency Programme"
+              "Gulbenkian Galápagos Artists' Residency Programme"
             end
             def title
-                "Galápagos Gulbenkian Artists' Residency Programme"
+                "Gulbenkian Galápagos Artists' Residency Programme"
             end
             def show_navigation?
               true
