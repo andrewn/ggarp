@@ -14,6 +14,7 @@ class Web < Sinatra::Base
     }
 
     require './app/views/layout'
+    require './app/views/profile_view_model'
     require './app/views/artist_view_model'
     require './app/views/home'
     require './app/views/artist'
@@ -83,6 +84,11 @@ class Web < Sinatra::Base
         
         @all_partners = @partners_data.map do |partner|
             partner_model = Web::Views::PartnerViewModel.new(partner)
+
+            partner_model.media = @media_models.find_all do |media_item|
+                partner_model.name == media_item.parent
+            end
+
             partner_model
         end
 

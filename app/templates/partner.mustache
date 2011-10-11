@@ -11,17 +11,24 @@
 		<p class="link"><a href="{{url}}">{{text}}</a></p>
 		{{/links}}
 	</div> <!-- #description -->
-	<div id="gallery">
-            <ul>
+      <div id="gallery" class="use-slideshow">                              
+                  <ul class="thumbnails">
+                  {{#media_thumbnails}}
+                        <li>
+                              <a href="#media-{{media_id}}">
+                                    <img class="thumb" src="{{thumb_url}}" alt="Thumbnail for {{title}}">
+                              </a>
+                        </li>
+                  {{/media_thumbnails}}
+                  </ul>
+                  <div class="main">
                   {{#media}}
-                  <li>
-                        <a href="#media-{{media_id}}">
-                              <img class="thumb" width="100" height="100" src="{{thumb}}" alt="img">
-                        </a>
-                        <img id="media-{{media_id}}" class="main" width="640" height="360" src="{{full}}" alt="img">
-                  <li>
-                  {{/media}}   
-            </ul>
-      </div> <!-- #gallery -->
+                        <div id="media-{{media_id}}" class="image">
+                              <img width="{{width}}" height="{{height}}" src="{{url}}" alt="{{title}}" title="{{credit}}">
+                              <p class="title">{{{title}}}<!--<span class="credit">(&#169; {{credit}})</span>--></p>
+                        </div>
+                  {{/media}}
+                  </div>
+      </div>
 </div> <!-- #artist -->
 {{/current_partner}}

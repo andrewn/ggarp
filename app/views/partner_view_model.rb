@@ -1,15 +1,7 @@
 # encoding: utf-8
 class Web
     module Views
-        class PartnerViewModel
-            attr_accessor :is_selected
-            def initialize(info, is_selected = false)
-                @info = info
-                @is_selected = is_selected
-            end
-            def is_selected
-                @is_selected
-            end
+        class PartnerViewModel < ProfileViewModel
             def name
                 @info[:name]
             end
@@ -36,9 +28,6 @@ class Web
             end
             def logo
                 "/partner/assets/#{name_as_url}_300.jpg"
-            end
-            def published?
-                @info[:published] === 'yes'
             end
         end
     end
