@@ -177,7 +177,36 @@ margin: 0 0 20px;
 overflow: auto;
 }
 
+#artists li,
+#sponsors li {
+  float: left;
+  width: 140px;
+  min-height: 80px;
+  padding: 10px 12px;
 
+  position: relative;
+  overflow: hidden;
+}
+
+#artists li:hover,
+#sponsors li:hover {
+  display: block;
+  padding: 10px 12px;
+
+  background: #9BC500;
+}
+
+#sponsors li {
+  width: 300px;
+  margin: 0 9px 11px 0;
+}
+
+#artists li a,
+#sponsors li a {
+  text-decoration: none;
+}
+
+/*
 #artists li a,
 #sponsors li a {
 display: block;
@@ -197,12 +226,13 @@ display: block;
 padding: 10px 12px;
 background: #9BC500;
 }
-  
+
 #sponsors li a {
 width: 300px;
 margin: 0 9px 11px 0;
 }
-
+*/
+  
 #content #artists h2,
 #content #sponsors h2 {
 border-bottom: 1px solid #A4BE2B;
@@ -219,11 +249,11 @@ margin-bottom: 5px;
 font-weight: bold;
 }
 
-  #content #artists li a:hover h3 {
+#content #artists li:hover h3 {
 color: #000;
 }
   
-  #artists li img {
+#artists li img {
 padding: 0;
 margin: 0;
 }
@@ -256,10 +286,10 @@ font-size: 13px;
 font-weight: bold;
 }
   
-#artists a:hover span.type,
-#artists a:hover span.date,
-#artists a:hover span.desc,
-#artists a:hover span.place {
+#artists li:hover span.type,
+#artists li:hover span.date,
+#artists li:hover span.desc,
+#artists li:hover span.place {
 display: inline;
 width: auto;
 background: #9BC500;
