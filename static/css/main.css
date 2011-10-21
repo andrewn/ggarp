@@ -405,11 +405,14 @@ margin: 10px 10px;
 font-size: 14px;
 }
 
+#artist a,
 #artist p.link a {
 color: #000;
 text-decoration: none;
+font-weight: bold;
 }
 
+#artist a:hover,
 #artist p.link a:hover {
 text-decoration: underline;
 }
