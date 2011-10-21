@@ -41,8 +41,24 @@ class Web
             def bio
                 text = @info[:bio]
                 text.gsub!(/\n/, "<br/>")
+                text = replace_md_format_urls(text)
                 text
             end
+
+            def replace_md_format_urls(text)
+                format = /(\[([^\]]*)\]\(([^\s]*)\))/
+                text.scan(format).each do |match|
+                  if match.length === 3
+                    str_in_text = match[0]
+                    link_text   = match[1]
+                    link_url    = match[2]
+                    anchor = "<a href='#{link_url}'>#{link_text}</a>"
+                    text.gsub! str_in_text, anchor
+                  end
+                end
+                text
+            end
+
             def with?
                 not with.empty?
             end
