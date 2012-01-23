@@ -33,7 +33,7 @@ class Web
             end
 
             def copyright
-              "&copy; Galápagos Conservation Trust 2011"
+              "&copy; Galapagos Conservation Trust 2011"
             end
 
             private 
